@@ -17,7 +17,8 @@ function Driver(opts,app) {
   opts.timeout = opts.timeout || 1000 * 60 ;
   opts.scanDelay = opts.scanDelay || 10000;
   
-  this._opts.logging = this._opts.logging || true; //Logging is on by default
+  //By default, logging is on
+  this._opts.logging = this._opts.logging == undefined ? true : this._opts.logging;
 
   this._timeouts = {};
   opts.lastValue = opts.LastValue || {};
